@@ -9,6 +9,10 @@
 </head>
 <body>
 <div id="app">we are mode: {{.Mode}}</div>
+{{if eq .Mode "debug"}}
+<script src="http://localhost:3000/app.js"></script>
+{{else}}
 <script src="/static/app.js"></script>
+{{end}}
 </body>
 </html>
