@@ -1,0 +1,12 @@
+[target]
+path = github.com/go-eyas/blog-try
+port = 8000
+host = "0.0.0.0"
+
+[deps]
+github.com/gin-gonic/gin =
+github.com/naoina/toml =
+github.com/jinzhu/gorm =
+
+[res]
+include = client|config.ini
