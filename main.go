@@ -6,7 +6,9 @@ import (
 )
 
 func main() {
+  config := api.ParseConfig("./config.ini")
+  gin.SetMode(config.Mode)
 	app := gin.Default()
 	api.Main(app)
-	app.Run()
+	app.Run(config.Host + ":" + config.Port)
 }
