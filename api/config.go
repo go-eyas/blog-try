@@ -1,16 +1,16 @@
-package api 
+package api
 
 import (
-  "os"
   "io/ioutil"
+  "os"
 
   "github.com/naoina/toml"
 )
 
 type Config struct {
-  Mode string
-  Port string
-  Host string
+  Mode     string
+  Port     string
+  Host     string
   Database struct {
     Url string
   }
@@ -30,5 +30,5 @@ func ParseConfig(filename string) Config {
   if err := toml.Unmarshal(buf, &config); err != nil {
     panic(err)
   }
-  return config;
+  return config
 }
