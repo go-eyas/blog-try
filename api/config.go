@@ -8,10 +8,11 @@ import (
 )
 
 type Config struct {
-  Mode     string
-  Port     string
-  Host     string
-  Database struct {
+  Mode       string
+  clientMode string
+  Port       string
+  Host       string
+  Database   struct {
     Url string
   }
 }
