@@ -1,9 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+if(process.env.NODE_ENV === "production"){
+	__webpack_public_path__ = "/static/"
+}else{
+	__webpack_public_path__ = "http://localhost:3000/static/"
+}
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('app')
-);
+require.ensure([], require => {
+  require('utils/global');
+  ReactDOM.render(require('./router').default, document.getElementById('app'));
+}, 'client');
