@@ -10,20 +10,6 @@ func main() {
 	config := config.Get()
 	gin.SetMode(config.Mode)
 	app := gin.Default()
-
-	/**
-	static folder
-	*/
-	app.Static("/static", func() string {
-		var staticFolder string
-		if config.ClientMode == "dev" {
-			staticFolder = "./client/dev"
-		} else {
-			staticFolder = "./client/prod"
-		}
-		return staticFolder;
-	}())
-
 	api.Main(app)
 	app.Run(config.Host + ":" + config.Port)
 }

@@ -7,7 +7,6 @@ import WebpackDevServer from "webpack-dev-server";
 import webpackDevConfig from "./config/webpack.dev.js";
 import webpackProConfig from "./config/webpack.pro.js";
 import config from "./config/config.client";
-// import nodemon from "nodemon";
 import fs from "fs";
 import {exec} from "child_process";
 

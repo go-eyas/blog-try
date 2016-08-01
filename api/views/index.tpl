@@ -9,8 +9,8 @@
 </head>
 <body>
 <div id="app">we are mode: {{.Mode}}</div>
-{{if eq .Mode "debug"}}
-<script src="http://localhost:3000/bundle.js"></script>
+{{if eq .ClientMode "dev"}}
+<script src="http://localhost:3000/static/app.js"></script>
 {{else}}
 <script src="/static/app.js"></script>
 {{end}}

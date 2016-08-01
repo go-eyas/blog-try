@@ -3,6 +3,7 @@ package api
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-eyas/blog-try/api/handler"
+	"github.com/go-eyas/blog-try/api/config"
 )
 
 /**
@@ -13,11 +14,12 @@ func routes(router *gin.Engine) {
 }
 
 /**
-static folder
-*/
+static
+ */
 func static(app *gin.Engine) {
+	conf := config.Get()
 	var staticFolder string
-	if gin.Mode() == "debug" {
+	if conf.ClientMode == "dev" {
 		staticFolder = "./client/dev"
 	} else {
 		staticFolder = "./client/prod"
@@ -29,7 +31,6 @@ func static(app *gin.Engine) {
 init api
 */
 func Main(app *gin.Engine) {
-	//gin.SetMode(gin.ReleaseMode)
 	app.LoadHTMLGlob("api/views/*")
 	routes(app)
 	static(app)
