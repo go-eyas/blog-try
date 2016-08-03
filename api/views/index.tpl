@@ -8,7 +8,7 @@
     <title>Eyas Blog Page</title>
 </head>
 <body>
-<div id="app">we are mode: {{.Mode}}</div>
+<div id="app"></div>
 {{if eq .ClientMode "dev"}}
 <script src="http://localhost:3000/static/app.js"></script>
 {{else}}
